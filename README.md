@@ -8,7 +8,7 @@ provided by [Gerencianet](http://gerencianet.com.br).
 [![Code Climate](https://codeclimate.com/github/gerencianet/gn-api-sdk-python/badges/gpa.svg)](https://codeclimate.com/github/gerencianet/gn-api-sdk-python)
 
 
-:warning: **THIS LIBRARY IS NOT PRODUTION VERSION YET. IT WILL BE RELEASED SOME TIME IN FUTURE IN OFFICIAL GERENCIANT'S GITHUB PAGE**
+:warning: **THIS LIBRARY IS NOT PRODUTION VERSION YET.**
 
 :warning: **Gerencianet API is under BETA version, meaning that it's not available for all users right now. If you're interested, you can always send an email to
 desenvolvedores@gerencianet.com.br and we'll enable it for your account**

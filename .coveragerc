@@ -5,7 +5,7 @@ include = gerencianet/*
 
 [report]
 # Regexes for lines to exclude from consideration
-omit = */docs/*
+omit = docs/*
 exclude_lines =
     # Have to re-enable the standard pragma
     pragma: no cover
