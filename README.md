@@ -15,7 +15,7 @@ desenvolvedores@gerencianet.com.br and we'll enable it for your account**
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install with Pip:
 
 ```bash
 $ pip install gerencianet
