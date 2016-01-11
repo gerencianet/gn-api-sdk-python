@@ -1,0 +1,14 @@
+language: python
+python:
+  - "2.7"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "pypy"
+install:
+  - pip install -r requirements-dev.txt
+  - pip install coveralls
+script:
+  - py.test --cov gerencianet
+after_success:
+  coveralls
