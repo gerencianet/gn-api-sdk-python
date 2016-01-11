@@ -3,9 +3,9 @@
 > A python library for integration of your backend with the payment services
 provided by [Gerencianet](http://gerencianet.com.br).
 
-[![Build Status](https://travis-ci.org/dannielhugo/gn-api-sdk-python.svg)](https://travis-ci.org/dannielhugo/gn-api-sdk-python)
-[![Coverage Status](https://coveralls.io/repos/dannielhugo/gn-api-sdk-python/badge.svg?branch=master&service=github)](https://coveralls.io/github/dannielhugo/gn-api-sdk-python?branch=master)
-[![Code Climate](https://codeclimate.com/github/dannielhugo/gn-api-sdk-python/badges/gpa.svg)](https://codeclimate.com/github/dannielhugo/gn-api-sdk-python)
+[![Build Status](https://travis-ci.org/gerencianet/gn-api-sdk-python.svg)](https://travis-ci.org/gerencianet/gn-api-sdk-python)
+[![Coverage Status](https://coveralls.io/repos/gerencianet/gn-api-sdk-python/badge.svg?branch=master&service=github)](https://coveralls.io/github/gerencianet/gn-api-sdk-python?branch=master)
+[![Code Climate](https://codeclimate.com/github/gerencianet/gn-api-sdk-python/badges/gpa.svg)](https://codeclimate.com/github/gerencianet/gn-api-sdk-python)
 
 
 :warning: **THIS LIBRARY IS NOT PRODUTION VERSION YET. IT WILL BE RELEASED SOME TIME IN FUTURE IN OFFICIAL GERENCIANT'S GITHUB PAGE**
