@@ -7,7 +7,7 @@ from os import path
 here = path.abspath(path.dirname(__file__))
 
 # Get the long description from the README file
-with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+with open(path.join(here, 'README.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 
@@ -26,7 +26,7 @@ setup(
     url='https://github.com/gerencianet/gn-api-sdk-python',
 
     # Author details
-    author='Cecília Deveza, Danniel Hugo, Francisco Thiene, Talita Campos, Thomaz Feitoza',
+    author='Danniel Hugo, Cecilia Deveza, Francisco Thiene, Thomaz Feitoza, Talita Campos ',
     author_email='suportetecnico@gerencianet.com.br',
 
     # Choose your license
@@ -38,14 +38,14 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 4 - Alpha',
+        'Development Status :: 4 - Beta',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
         'Topic :: Software Development',
 
         # Pick your license as you wish (should match "license" above)
-        'License :: MIT License',
+        'License :: OSI Approved :: MIT License',
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
@@ -60,7 +60,7 @@ setup(
 
     # You can just specify the packages manually here if your project is
     # simple. Or you can use find_packages().
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=find_packages(),
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
@@ -70,14 +70,12 @@ setup(
         'test': ['pytest-cov', 'pytest', 'responses'],
     },
 
-    include_package_data=True,
-
     package_data={
         # If any package contains *.txt or *.rst files, include them:
-        '': ['*.txt', '*.rst'],
-        # And include any *.msg files found in the 'config' package, too:
-        'config': ['*.json'],
+        '': ['requirements.txt', '.md', 'LICENSE']
     },
+
+    include_package_data=True,
 
     install_requires=dependencies,
 
