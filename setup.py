@@ -17,7 +17,7 @@ dependencies = [dependency.strip()
 setup(
     name='gerencianet',
 
-    version='0.0.2',
+    version='1.0.0',
 
     description='Module for integration with Gerencianet API',
     long_description=long_description,
