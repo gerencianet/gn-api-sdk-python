@@ -31,7 +31,7 @@ body = {
 Create the charge:
 
 ```python
-gn.create_charge(body: body)
+gn.create_charge(body=body)
 ```
 
 The attribute `payee_code` identifies a Gerencianet account, just like in [creating charges with shippings](/docs/charge-with-shippings.md). In order to get someone else's `payee_code` you need to ask the account owner. There is no other way. To visualize yours, log in your Gerencianet account and search for *Identificador de Conta* under *Dados Cadastrais*.

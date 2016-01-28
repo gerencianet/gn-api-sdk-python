@@ -56,7 +56,7 @@ The `notification_url` property will be used for sending notifications once thin
 ### Finally, create the charge:
 
 ```python
-gn.create_charge(body: body)
+gn.create_charge(body=body)
 ```
 
 Check out the response:
