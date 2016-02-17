@@ -140,7 +140,7 @@ body = {
 ### Finally, create the carnet:
 
 ```python
-gn.create_carnet(body: body)
+gn.create_carnet(body=body)
 ```
 
 Check out the response:

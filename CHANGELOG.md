@@ -4,7 +4,7 @@
 
 # 1.0.0
 
-- First stable release
+- Released stable version
 
 # 0.0.2
 
