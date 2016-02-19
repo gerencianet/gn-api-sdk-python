@@ -102,4 +102,4 @@ The response will be an array with all the changes of a certain token that happe
 
 * value: This parameter will only be shown when the status changes to paid.
 
- For more informations about notifications, please refer to [Gerencianet](https://docs.gerencianet.com.br/#!/charges/notifications).
+ For more informations about notifications, please refer to [Gerencianet](https://docs.gerencianet.com.br/transacoes/notificacoes).
