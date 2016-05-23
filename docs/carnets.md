@@ -59,33 +59,6 @@ body = {
 
 The `notification_url` property will be used for sending notifications once things happen with charges statuses, as when it's payment was approved, for example. More about notifications [here](/docs/notifications.md). The `custom_id` property can be used to set your own reference to the carnet.
 
-
-### Required properties plus post office service information **(optional)**:
-
-If you want the carnet to arrive at your house or at your client's house, you can count on Gerencianet's post office service. Just send an extra attribute:
-
-```python
-body = {
-    'items': [{
-        'name': "Carnet Item 1",
-        'value': 1000,
-        'amount': 2
-    }],
-    'customer': {
-        'name': "Gorbadoc Oldbuck",
-        'email': "oldbuck@gerencianet.com.br",
-        'cpf': "04267484171",
-        'birth': "1977-01-15",
-        'phone_number': "5144916523"
-    },
-    'repeats': 4,
-    'expire_at': "2020-12-12"
-}
-```
-
-If `send_to` is set to *customer*, the carnet arrives at you customer's. If it is set to *seller*, just wait for it to arrive at your place!
-
-
 ### split_items attribute **(optional)**
 
 By default, each parcel has the total value of the carnet. If you want to divide the total value among the parcels, change `split_items` property to *true*.
