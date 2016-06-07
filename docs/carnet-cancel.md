@@ -19,7 +19,7 @@ params = {
     'id': 1
 }
 
-response =  gn.cancel_carnet(params=params, body=body)
+response =  gn.cancel_carnet(params=params)
 print(response)
 
 ```

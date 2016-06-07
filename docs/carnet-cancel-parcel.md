@@ -20,7 +20,7 @@ params = {
     'parcel': 1
 }
 
-response =  gn.cancel_parcel(params=params, body=body)
+response =  gn.cancel_parcel(params=params)
 print(response)
 
 ```
