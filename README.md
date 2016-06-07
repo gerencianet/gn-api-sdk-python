@@ -87,6 +87,8 @@ $ py.test
 - [Resending the carnet](/docs/carnet-resend.md)
 - [Resending carnet parcel](/docs/carnet-resend-parcel.md)
 - [Adding information to carnet's history](/docs/carnet-create-history.md)
+- [Canceling the carnet](/docs/carnet-cancel.md)
+- [Canceling carnet parcel](/docs/carnet-cancel-parcel.md)
 
 ### Subscriptions
 
