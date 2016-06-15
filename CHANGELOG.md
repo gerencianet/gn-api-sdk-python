@@ -1,3 +1,9 @@
+# 1.0.2
+
+- Added: new endpoint (cancel carnet)
+- Added: new endpoint (cancel parcel)
+- Updated: docs
+
 # 1.0.1
 
 - Fix sdk versioning
