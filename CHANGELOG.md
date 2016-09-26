@@ -1,3 +1,8 @@
+# 1.0.4
+
+- Added: new endpoint (link charge)
+- Updated: docs
+
 # 1.0.3
 
 - Fix Release 1.0.2
