@@ -7,9 +7,6 @@ provided by [Gerencianet](http://gerencianet.com.br).
 [![Coverage Status](https://coveralls.io/repos/gerencianet/gn-api-sdk-python/badge.svg?branch=master&service=github)](https://coveralls.io/github/gerencianet/gn-api-sdk-python?branch=master)
 [![Code Climate](https://codeclimate.com/github/gerencianet/gn-api-sdk-python/badges/gpa.svg)](https://codeclimate.com/github/gerencianet/gn-api-sdk-python)
 
-:warning: **Gerencianet API is under BETA version, meaning that it's not available for all users right now. If you're interested, you can always send an email to
-desenvolvedores@gerencianet.com.br and we'll enable it for your account**
-
 ## Installation
 
 Install with Pip:
@@ -51,14 +48,14 @@ print gn.create_charge(body=body)
 
 ## Examples
 
-You can run the examples inside `docs/examples` with
-`$ python docs/examples/example.py`:
+You can run the examples inside `examples` with
+`$ python examples/example.py`:
 
 ```bash
-$ python docs/examples/create_charge.py
+$ python examples/create_charge.py
 ```
 
-Just remember to set the correct credentials inside `docs/examples/credentials.py` before running.
+Just remember to set the correct credentials inside `examples/credentials.py` before running.
 
 ## Tests
 
@@ -70,48 +67,7 @@ $ py.test
 
 ## Additional documentation
 
-### Charges
-
-- [Creating charges](/docs/charges.md)
-- [Paying a charge](/docs/charge-payment.md)
-- [Detailing charges](/docs/charge-detailing.md)
-- [Updating informations](/docs/charge-update.md)
-- [Resending billet](/docs/charge-resend-billet.md)
-- [Adding information to charge's history](/docs/charge-create-history.md)
-
-### Carnets
-
-- [Creating carnets](/docs/carnets.md)
-- [Detailing carnets](/docs/carnet-detailing.md)
-- [Updating informations](/docs/carnet-update.md)
-- [Resending the carnet](/docs/carnet-resend.md)
-- [Resending carnet parcel](/docs/carnet-resend-parcel.md)
-- [Adding information to carnet's history](/docs/carnet-create-history.md)
-- [Canceling the carnet](/docs/carnet-cancel.md)
-- [Canceling carnet parcel](/docs/carnet-cancel-parcel.md)
-
-### Subscriptions
-
-- [Creating subscriptions](/docs/subscriptions.md)
-- [Paying a subscription](/docs/subscription-payment.md)
-- [Detailing subscriptions](/docs/subscription-detailing.md)
-- [Updating informations](/docs/subscription-update.md)
-
-### Marketplace
-
-- [Creating a marketplace](/docs/charge-with-marketplace.md)
-
-### Notifications
-
-- [Getting notifications](/docs/notifications.md)
-
-### Payments
-
-- [Getting installments](/docs/installments.md)
-
-### All in one
-
-- [Usage](/docs/all-in-one.md)
+The full documentation with all available endpoints is in https://dev.gerencianet.com.br/.
 
 ## Changelog
 
