@@ -119,5 +119,9 @@ class Constants(object):
         'cancel_parcel': {
             'route': '/carnet/:id/parcel/:parcel/cancel',
             'method': 'put'
+        },
+        'link_charge': {
+            'route': '/charge/:id/link',
+            'method': 'post'
         }
     }
