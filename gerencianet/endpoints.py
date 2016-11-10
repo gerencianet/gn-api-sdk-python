@@ -52,7 +52,7 @@ class Endpoints(object):
         }
 
         if 'partner_token' in self.options:
-            headers['partner_token'] = self.options['partner_token']
+            headers['partner-token'] = self.options['partner_token']
 
         return requests.request(settings['method'], url, json=body, headers=headers)
 
@@ -64,7 +64,7 @@ class Endpoints(object):
         }
 
         if 'partner_token' in self.options:
-            headers['partner_token'] = self.options['partner_token']
+            headers['partner-token'] = self.options['partner_token']
 
         auth = (self.options['client_id'], self.options['client_secret'])
         auth_body =  {'grant_type': 'client_credentials'}
