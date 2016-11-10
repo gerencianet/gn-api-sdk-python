@@ -1,3 +1,7 @@
+# 1.0.5
+
+- Added: new header
+
 # 1.0.4
 
 - Added: new endpoint (link charge)
