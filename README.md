@@ -14,7 +14,10 @@ Install with Pip:
 ```bash
 $ pip install gerencianet
 ```
-
+## Tested with
+```
+python 2.7, 3.3, 3.4 and 3.5
+```
 ## Basic usage
 
 ```python
