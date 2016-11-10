@@ -51,6 +51,9 @@ class Endpoints(object):
             'Authorization': 'Bearer {token}'.format(token=self.token['access_token'])
         }
 
+        if 'partner_token' in self.options:
+            headers['partner_token'] = self.options['partner_token']
+
         return requests.request(settings['method'], url, json=body, headers=headers)
 
     def authenticate(self):
@@ -59,6 +62,9 @@ class Endpoints(object):
             'accept': 'application/json',
             'api-sdk': 'python-{v}'.format(v=VERSION),
         }
+
+        if 'partner_token' in self.options:
+            headers['partner_token'] = self.options['partner_token']
 
         auth = (self.options['client_id'], self.options['client_secret'])
         auth_body =  {'grant_type': 'client_credentials'}
