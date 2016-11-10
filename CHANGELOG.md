@@ -1,3 +1,7 @@
+# 1.0.6
+
+- Fix: partner header
+
 # 1.0.5
 
 - Added: new header
