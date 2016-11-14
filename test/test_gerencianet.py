@@ -148,3 +148,23 @@ class TestGerencianet():
         response = endpoints.create_charge(body = {'items': items})
 
         assert response == TestGerencianet.charge
+
+    @responses.activate
+    def test_api_request_call_with_partner_token(self):
+        responses.add(responses.POST, Constants.URL['sandbox'] + '/authorize',
+                      content_type='application/json', status=200,
+                      json=TestGerencianet.auth_success)
+
+        responses.add(responses.POST, Constants.URL['sandbox'] + '/charge',
+                      content_type='application/json', status=200,
+                      json=TestGerencianet.charge)
+
+        items = [
+            {'name': 'item 1', 'value': 1000},
+            {'name': 'item 2', 'value': 2000}
+        ]
+
+        endpoints = Gerencianet({'client_id': 'cid', 'client_secret': 'csec', 'partner_token': 'partner'})
+        response = endpoints.create_charge(body={'items': items})
+
+        assert response == TestGerencianet.charge
