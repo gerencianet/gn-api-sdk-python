@@ -33,5 +33,5 @@ params = {
     'id': charge['data']['charge_id']
 }
 
-response = gn.link_charge(params=params, body=link)
+response = gn.charge_link(params=params, body=link)
 print(response)
