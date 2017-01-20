@@ -1,3 +1,7 @@
+# 1.0.7
+
+- Added: new endpoint (update charge link)
+
 # 1.0.6
 
 - Fix: partner header
@@ -8,7 +12,7 @@
 
 # 1.0.4
 
-- Added: new endpoint (link charge)
+- Added: new endpoint (charge link)
 - Updated: docs
 
 # 1.0.3
