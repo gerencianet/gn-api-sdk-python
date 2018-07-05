@@ -139,5 +139,9 @@ class Constants(object):
         'create_subscription_history': {
             'route': '/subscription/:id/history',
             'method': 'post'
+        },
+        'create_charge_balance_sheet': {
+            'route': '/charge/:id/balance_sheet',
+            'method': 'post'
         }
     }
