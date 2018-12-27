@@ -143,5 +143,13 @@ class Constants(object):
         'create_charge_balance_sheet': {
             'route': '/charge/:id/balance_sheet',
             'method': 'post'
+        },
+        'settle_charge': {
+            'route': '/charge/:id/settle',
+            'method': 'put'
+        },
+        'settle_carnet_parcel': {
+            'route': '/carnet/:id/parcel/:parcel/settle',
+            'method': 'put'
         }
     }
