@@ -100,6 +100,10 @@ class Constants(object):
             'route': '/charge/:id/history',
             'method': 'post'
         },
+        'create_charge_onestep': {
+            'route': '/charge/one-step',
+            'method': 'post'
+        },
         'resend_carnet': {
             'route': '/carnet/:id/resend',
             'method': 'post'
