@@ -1,10 +1,9 @@
 # encoding: utf-8
-​
+
 from gerencianet import Gerencianet
 from credentials import CREDENTIALS
-​
 gn = Gerencianet(CREDENTIALS)
-​
+
 body = {
     'items': [{
         'name': "Product 1",
@@ -37,6 +36,6 @@ body = {
         }
     }
 }
-​
+
 response = gn.create_charge_onestep(params=None, body=body)
 print(response)

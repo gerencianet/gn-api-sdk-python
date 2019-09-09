@@ -1,3 +1,8 @@
+# 1.1.0
+
+- Minor release 
+- Fixed: One step credit card example
+
 # 1.0.11
 
 - Added: new endpoint (one step)

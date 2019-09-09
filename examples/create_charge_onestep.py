@@ -17,7 +17,7 @@ body = {
     }],
     'payment': {
         'banking_billet': {
-            'expire_at': '2016-12-12',
+            'expire_at': '2021-12-12',
             'customer': {
                 'name': "Gorbadoc Oldbuck",
                 'email': "oldbuck@gerencianet.com.br",
