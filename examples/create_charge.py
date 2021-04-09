@@ -3,12 +3,13 @@
 from gerencianet import Gerencianet
 from credentials import CREDENTIALS
 
+
 gn = Gerencianet(CREDENTIALS)
 
 body = {
     'items': [{
         'name': "Product 1",
-        'value': 1000,
+        'value': 1100,
         'amount': 2
     }],
     'shippings': [{

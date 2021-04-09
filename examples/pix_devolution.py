@@ -1,18 +1,17 @@
-# encoding: utf-8
-
 from gerencianet import Gerencianet
 from credentials import CREDENTIALS
-
 
 gn = Gerencianet(CREDENTIALS)
 
 params = {
-    'id': 1
+    'e2eId': '',
+    'id': 0
 }
 
 body = {
-    'email': 'oldbuck@gerencianet.com.br'
+    'valor': ''
 }
 
-response =  gn.resend_carnet(params=params, body=body)
+response =  gn.pix_devolution(params=params,body=body)
 print(response)
+

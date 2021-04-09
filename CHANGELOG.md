@@ -1,3 +1,7 @@
+# 2.0.0
+- Added: include new endpoints of Pix API
+- Fix: updated dependencies
+
 # 1.1.0
 
 - Minor release 

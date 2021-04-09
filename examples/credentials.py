@@ -4,5 +4,6 @@
 CREDENTIALS = {
     'client_id': '',
     'client_secret': '',
-    'sandbox': True
+    'sandbox': False,
+    'pix_cert': 'insira-o-caminho-completo-do-certificado'
 }

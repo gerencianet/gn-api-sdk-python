@@ -16,7 +16,7 @@ $ pip install gerencianet
 ```
 ## Tested with
 ```
-python 2.7, 3.3, 3.4 and 3.5
+python 2.7, 3.3, 3.4, 3.5 and 3.9
 ```
 ## Basic usage
 
