@@ -19,5 +19,5 @@ class MissingParametersError(GerencianetError):
 class UnauthorizedError(GerencianetError):
 
     def __init__(self, status):
-        message = 'Status:'  + str(status) +" Could not authenticate. \n\Please make sure you are using correct credentials and if you are using then in the correct environment."
+        message = "Status:" + str(status) + " Could not authenticate. \nPlease make sure you are using correct credentials and if you are using then in the correct environment."
         super(UnauthorizedError, self).__init__(message)

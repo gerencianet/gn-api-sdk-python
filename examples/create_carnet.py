@@ -6,7 +6,7 @@ from credentials import CREDENTIALS
 gn = Gerencianet(CREDENTIALS)
 
 body = {
-    'expire_at': '2016-12-12',
+    'expire_at': '2021-04-12',
     'items': [{
         'name': "Carnet Item 1",
         'value': 1000,
@@ -15,7 +15,7 @@ body = {
     'customer': {
         'name': "Gorbadoc Oldbuck",
         'email': "oldbuck@gerencianet.com.br",
-        'cpf': "04267484171",
+        'cpf': "62959186036",
         'birth': "1977-01-15",
         'phone_number': "5144916523"
     },

@@ -22,7 +22,7 @@ link = {
     'card_discount': 0,
     'message': '',
     'expire_at': '2017-12-12',
-    'request_delivery_address': false,
+    'request_delivery_address': None,
     'payment_method': 'all'
 }
 

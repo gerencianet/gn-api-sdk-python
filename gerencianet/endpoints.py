@@ -7,6 +7,7 @@ import json
 import re
 import requests
 import inspect
+import base64
 
 from .constants import Constants
 from .exceptions import MissingParametersError
@@ -21,55 +22,87 @@ class Endpoints(object):
         super(Endpoints, self).__init__()
         self.token = None
         self.options = options
-        self.endpoints = Constants.ENDPOINTS
-        self.urls = Constants.URL
-        self.get_url()
 
     def __getattr__(self, name):
+        if name in Constants.ENDPOINTS['PIX']:
+            self.endpoints = Constants.ENDPOINTS['PIX']
+            self.urls = Constants.URL['PIX']
+        else:
+            self.endpoints = Constants.ENDPOINTS['DEFAULT']
+            self.urls = Constants.URL['DEFAULT']
+            self.options['pix_cert'] = None
+        self.get_url()
         return partial( self.request, self.endpoints[name])
 
     def request(self, settings, **kwargs):
-        if not self.token:
-            self.authenticate()
 
+        self.authenticate()
+        
         params = {} if 'params' not in kwargs else kwargs['params']
         body = {} if 'body' not in kwargs else kwargs['body']
+        headers = {} if 'headers' not in kwargs else kwargs['headers']
 
-        response = self.send(settings, params, body)
+        response = self.send(settings, params, body, headers)
 
-        if response.status_code == 401:
-            self.authenticate()
-            response = self.send(settings, params, body)
+        try:
+        	response.json()
+        except:
+        	return '{\'code\': ' + str(response.status_code) + '}'
+        else:
+        	return response.json()
 
-        return response.json()
-
-    def send(self, settings, params, body):
+    def send(self, settings, params, body, headersComplement):
         url = self.build_url(settings['route'], params)
-        headers = {
-            'accept': 'application/json',
-            'api-sdk': 'python-{v}'.format(v=VERSION),
-            'Authorization': 'Bearer {token}'.format(token=self.token['access_token'])
-        }
 
-        if 'partner_token' in self.options:
-            headers['partner-token'] = self.options['partner_token']
+        if(self.options['pix_cert']):
+            headers = {
+                'Authorization': 'Bearer {token}'.format(token=self.token['access_token']),
+                'Content-Type': 'application/json',
+                'api-sdk': 'python-{v}'.format(v=VERSION)
+            }
 
-        return requests.request(settings['method'], url, json=body, headers=headers)
+            for (key,value) in headersComplement.items():
+                headers[key] = value
+
+            if 'partner_token' in self.options:
+                headers['partner-token'] = self.options['partner_token']
+            cert=self.options['pix_cert']
+            return requests.request(settings['method'],url, headers=headers, data=json.dumps(body), cert=cert)
+        else:
+            headers = {
+                'accept': 'application/json',
+                'api-sdk': 'python-{v}'.format(v=VERSION),
+                'Authorization': 'Bearer {token}'.format(token=self.token['access_token'])
+            }
+            if 'partner_token' in self.options:
+                headers['partner-token'] = self.options['partner_token']
+            return requests.request(settings['method'], url, json=body, headers=headers)
 
     def authenticate(self):
-        url = self.build_url(self.endpoints['authorize']['route'], {})
-        headers = {
-            'accept': 'application/json',
-            'api-sdk': 'python-{v}'.format(v=VERSION),
-        }
-
-        if 'partner_token' in self.options:
-            headers['partner-token'] = self.options['partner_token']
-
-        auth = (self.options['client_id'], self.options['client_secret'])
-        auth_body =  {'grant_type': 'client_credentials'}
-
-        response = requests.post(url, headers=headers, auth=auth, json=auth_body)
+        
+        url = self.build_url(self.endpoints['authorize']['route'], {})             
+        
+        if(self.options['pix_cert']):
+            auth = base64.b64encode((f"{self.options['client_id']}:{self.options['client_secret']}").encode()).decode()
+            payload = "{\r\n    \"grant_type\": \"client_credentials\"\r\n}"
+            headers = {
+                'Authorization': f"Basic {auth}",
+                'Content-Type': 'application/json'
+            }
+            if 'partner_token' in self.options:
+                headers['partner-token'] = self.options['partner_token']
+            cert=self.options['pix_cert']
+            response = requests.post(url, headers=headers, data=payload, cert=cert)
+        else:
+            headers = {
+                'accept': 'application/json',
+                'api-sdk': 'python-{v}'.format(v=VERSION)
+            }
+            if 'partner_token' in self.options:
+                headers['partner-token'] = self.options['partner_token']
+            auth = (self.options['client_id'], self.options['client_secret'])
+            auth_body =  {'grant_type': 'client_credentials'}
+            response = requests.post(url, headers=headers, auth=auth, json=auth_body)
 
         if response.status_code == 200:
             json =  response.json()
