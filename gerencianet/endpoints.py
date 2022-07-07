@@ -140,7 +140,6 @@ class Endpoints(object):
 
         return route
 
-
     def query_string(self, params):
         mapped = []
         for (p, value) in iteritems(params):
