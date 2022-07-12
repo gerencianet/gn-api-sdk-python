@@ -18,6 +18,11 @@ $ pip install gerencianet
 ```
 python 2.7, 3.3, 3.4, 3.5 and 3.9
 ```
+## AVISO
+```
+ATENÇÃO: A Gerencianet está disponibilizando um novo endpoint para requisitar o envio de Pix, este endpoint passará a ter um idEnvio como parâmetro na requisição, além disso o método passa a ser o PUT ao invés do POST para fins de idempotência. 
+```
+
 ## Basic usage
 
 ```python
@@ -28,24 +33,29 @@ from gerencianet import Gerencianet
 credentials = {
     'client_id': 'client_id',
     'client_secret': 'client_secret',
-    'sandbox': True
+    'sandbox': True,
+    'certificate': 'insira-o-caminho-completo-do-certificado'
 }
 
 gn = Gerencianet(credentials)
 
 body = {
-    'items': [{
-        'name': "Product 1",
-        'value': 1000,
-        'amount': 2
-    }],
-    'shippings': [{
-        'name': "Default Shipping Cost",
-        'value': 100
-    }]
+    'calendario': {
+        'expiracao': 3600
+    },
+    'devedor': {
+        'cpf': '12345678909',
+        'nome': 'Francisco da Silva'
+    },
+    'valor': {
+        'original': '123.45'
+    },
+    'chave': '71cdf9ba-c695-4e3c-b010-abb521a3f1be',
+    'solicitacaoPagador': 'Cobrança dos serviços prestados.'
 }
 
-print gn.create_charge(body=body)
+response =  gn.pix_create_immediate_charge(body=body)
+print(response)
 
 ```
 
