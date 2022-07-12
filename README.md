@@ -18,9 +18,9 @@ $ pip install gerencianet
 ```
 python 2.7, 3.3, 3.4, 3.5 and 3.9
 ```
-## AVISO
+## Atenção
 ```
-ATENÇÃO: A Gerencianet está disponibilizando um novo endpoint para requisitar o envio de Pix, este endpoint passará a ter um idEnvio como parâmetro na requisição, além disso o método passa a ser o PUT ao invés do POST para fins de idempotência. 
+A Gerencianet está disponibilizando um novo endpoint para requisitar o envio de Pix, este endpoint passará a ter um idEnvio como parâmetro na requisição, além disso o método passa a ser o PUT ao invés do POST para fins de idempotência. 
 ```
 
 ## Basic usage
