@@ -1,3 +1,10 @@
+# 3.0.0
+- Added: include new endpoints of "API Open Finance"
+- Added: include new endpoints of "API Pagamentos"
+- Added: include new endpoints of "API Pix"
+- Updated: pix_send example
+- Update: rename 'pix_cert' for 'certificate' in credentials.py
+
 # 2.0.0
 - Added: include new endpoints of Pix API
 - Fix: updated dependencies

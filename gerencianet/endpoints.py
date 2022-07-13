@@ -24,13 +24,20 @@ class Endpoints(object):
         self.options = options
 
     def __getattr__(self, name):
-        if name in Constants.ENDPOINTS['PIX']:
-            self.endpoints = Constants.ENDPOINTS['PIX']
-            self.urls = Constants.URL['PIX']
+
+        if name in Constants.APIS['PIX']['ENDPOINTS']:
+            self.endpoints = Constants.APIS['PIX']['ENDPOINTS']
+            self.urls = Constants.APIS['PIX']['URL']
+        elif name in Constants.APIS['OPEN-FINANCE']['ENDPOINTS']:
+            self.endpoints = Constants.APIS['OPEN-FINANCE']['ENDPOINTS']
+            self.urls = Constants.APIS['OPEN-FINANCE']['URL']
+        elif name in Constants.APIS['PAGAMENTOS']['ENDPOINTS']:
+            self.endpoints = Constants.APIS['PAGAMENTOS']['ENDPOINTS']
+            self.urls = Constants.APIS['PAGAMENTOS']['URL']
         else:
-            self.endpoints = Constants.ENDPOINTS['DEFAULT']
-            self.urls = Constants.URL['DEFAULT']
-            self.options['pix_cert'] = None
+            self.endpoints = Constants.APIS['DEFAULT']['ENDPOINTS']
+            self.urls =  Constants.APIS['DEFAULT']['URL']
+            self.options['certificate'] = None
         self.get_url()
         return partial( self.request, self.endpoints[name])
 
@@ -54,7 +61,7 @@ class Endpoints(object):
     def send(self, settings, params, body, headersComplement):
         url = self.build_url(settings['route'], params)
 
-        if(self.options['pix_cert']):
+        if(self.options['certificate']):
             headers = {
                 'Authorization': 'Bearer {token}'.format(token=self.token['access_token']),
                 'Content-Type': 'application/json',
@@ -66,7 +73,7 @@ class Endpoints(object):
 
             if 'partner_token' in self.options:
                 headers['partner-token'] = self.options['partner_token']
-            cert=self.options['pix_cert']
+            cert=self.options['certificate']
             return requests.request(settings['method'],url, headers=headers, data=json.dumps(body), cert=cert)
         else:
             headers = {
@@ -82,7 +89,7 @@ class Endpoints(object):
         
         url = self.build_url(self.endpoints['authorize']['route'], {})             
         
-        if(self.options['pix_cert']):
+        if(self.options['certificate']):
             auth = base64.b64encode((f"{self.options['client_id']}:{self.options['client_secret']}").encode()).decode()
             payload = "{\r\n    \"grant_type\": \"client_credentials\"\r\n}"
             headers = {
@@ -91,7 +98,7 @@ class Endpoints(object):
             }
             if 'partner_token' in self.options:
                 headers['partner-token'] = self.options['partner_token']
-            cert=self.options['pix_cert']
+            cert=self.options['certificate']
             response = requests.post(url, headers=headers, data=payload, cert=cert)
         else:
             headers = {
@@ -132,7 +139,6 @@ class Endpoints(object):
                 del params[attr]
 
         return route
-
 
     def query_string(self, params):
         mapped = []
