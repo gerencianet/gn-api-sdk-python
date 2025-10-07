@@ -3,6 +3,8 @@
 > A python library for integration of your backend with the payment services
 provided by [Gerencianet](http://gerencianet.com.br).
 
+⚠️ The Gerencianet Python SDK will continue to function, but it will no longer receive updates. We recommend migrating to the [new Efí SDK](https://github.com/efipay/sdk-python-apis-efi) to continue enjoying our services and new features.
+
 [![Build Status](https://travis-ci.org/gerencianet/gn-api-sdk-python.svg)](https://travis-ci.org/gerencianet/gn-api-sdk-python)
 [![Coverage Status](https://coveralls.io/repos/gerencianet/gn-api-sdk-python/badge.svg?branch=master&service=github)](https://coveralls.io/github/gerencianet/gn-api-sdk-python?branch=master)
 [![Code Climate](https://codeclimate.com/github/gerencianet/gn-api-sdk-python/badges/gpa.svg)](https://codeclimate.com/github/gerencianet/gn-api-sdk-python)
